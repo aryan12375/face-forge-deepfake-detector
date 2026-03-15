@@ -1,0 +1,100 @@
+/* ── Design tokens ────────────────────────────────────────────────────────── */
+:root {
+  --bg-base:        #0a0a0a;
+  --bg-surface:     #0d0d0d;
+  --bg-elevated:    #141414;
+  --bg-hover:       #1a1a1a;
+
+  --border:         #1e1e1e;
+  --border-mid:     #2a2a2a;
+  --border-light:   #3a3a3a;
+
+  --text-primary:   #e8e8e0;
+  --text-secondary: #888880;
+  --text-muted:     #444440;
+  --text-ghost:     #2a2a2a;
+
+  --red:            #ff3030;
+  --red-dim:        #ff303020;
+  --red-border:     #ff303040;
+  --green:          #3a9e5a;
+  --green-dim:      #3a9e5a20;
+  --green-border:   #3a9e5a40;
+  --amber:          #c47a1a;
+  --amber-dim:      #c47a1a20;
+
+  --font-mono:      'Syne Mono', monospace;
+  --font-serif:     'Instrument Serif', serif;
+  --font-sans:      'DM Sans', sans-serif;
+
+  --radius-sm:      2px;
+  --radius-md:      4px;
+
+  --transition:     0.18s ease;
+}
+
+/* ── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
+
+/* ── Utilities ────────────────────────────────────────────────────────────── */
+.mono  { font-family: var(--font-mono); }
+.serif { font-family: var(--font-serif); }
+.muted { color: var(--text-secondary); }
+.ghost { color: var(--text-muted); }
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+@keyframes scan-line {
+  0%   { top: -2px; }
+  100% { top: 100%; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bar-grow {
+  from { width: 0%; }
+}
+
+.fade-in {
+  animation: fade-in 0.35s ease forwards;
+}

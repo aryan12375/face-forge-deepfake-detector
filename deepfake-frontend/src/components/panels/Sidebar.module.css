@@ -1,0 +1,235 @@
+.sidebar {
+  background: var(--bg-surface);
+  border-left: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  border-bottom: 0.5px solid var(--border);
+  flex-shrink: 0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px 4px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tab:hover { color: var(--text-secondary); background: var(--bg-elevated); }
+
+.tabActive {
+  color: var(--text-primary);
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5px;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--red);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  background: var(--red-dim);
+  border: 0.5px solid var(--red-border);
+  border-radius: 50%;
+  font-size: 8px;
+  color: var(--red);
+}
+
+/* Content area */
+.content {
+  padding: 20px 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Regions */
+.regionList { display: flex; flex-direction: column; gap: 0; }
+
+.regionRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.regionSwatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.regionInfo { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+
+.regionName { font-size: 11px; color: var(--text-secondary); }
+
+.regionTrack {
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.regionFill { height: 100%; border-radius: 1px; }
+
+.regionScore {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  min-width: 32px;
+  text-align: right;
+}
+
+.regionLegend { margin-top: 16px; }
+
+.legendGrad {
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--green), var(--amber), var(--red));
+  margin-bottom: 5px;
+}
+
+.legendLabels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* Metrics */
+.metricRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.metricKey {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.metricVal {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+
+.blendBlock { margin-top: 16px; }
+
+.blendHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.blendTrack {
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.blendFill { height: 100%; border-radius: 2px; }
+
+.blendAnnotations {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--text-muted);
+}
+
+/* History */
+.historyItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.historyThumb {
+  width: 32px;
+  height: 32px;
+  border: 0.5px solid;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+}
+
+.historyImg { width: 100%; height: 100%; object-fit: cover; }
+
+.historyInfo { flex: 1; overflow: hidden; }
+
+.historyName {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.historyMeta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.historyBadge {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  padding: 2px 7px;
+  border: 0.5px solid;
+  border-radius: 1px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+/* Empty state */
+.empty {
+  padding: 32px 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--text-ghost);
+  text-align: center;
+}
